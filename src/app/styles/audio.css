@@ -1,0 +1,50 @@
+/* Custom styles for audio controls */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-track {
+  background: #475569;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #f59e0b;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #1e293b;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #d97706;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-track {
+  background: #475569;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  background: #f59e0b;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #1e293b;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #d97706;
+  transform: scale(1.1);
+}
