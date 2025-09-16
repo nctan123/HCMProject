@@ -1,11 +1,41 @@
 import { Calendar, Star, Award, Sparkles, Heart, Flag } from "lucide-react";
 
 const timelinePeriods = [
-  { period: "Trước 5-6-1911", title: "Hình thành tư tưởng yêu nước", icon: Heart, color: "from-red-500 to-pink-500" },
-  { period: "5-6-1911 → 30-12-1920", title: "Con đường cách mạng vô sản", icon: Flag, color: "from-orange-500 to-red-500" },
-  { period: "31-12-1920 → 2-9-1930", title: "Nội dung cơ bản cách mạng", icon: Star, color: "from-yellow-500 to-orange-500" },
-  { period: "2-9-1930 → 28-1-1941", title: "Vượt qua thử thách", icon: Award, color: "from-green-500 to-blue-500" },
-  { period: "29-1-1941 → 2-9-1969", title: "Soi đường cho sự nghiệp", icon: Sparkles, color: "from-blue-500 to-purple-500" },
+  { 
+    period: "Trước 5-6-1911", 
+    title: "Hình thành tư tưởng yêu nước", 
+    icon: Heart, 
+    color: "from-red-500 to-pink-500",
+    content: "Trong thời niên thiếu, Nguyễn Tất Thành đã chứng kiến cảnh đất nước mất độc lập, phong trào yêu nước thất bại → từ đó hình thành tư tưởng yêu nước, thương dân, chí hướng tìm con đường cứu nước mới."
+  },
+  { 
+    period: "5-6-1911 → 12-1920", 
+    title: "Bước ngoặt quyết định", 
+    icon: Flag, 
+    color: "from-orange-500 to-red-500",
+    content: "5-6-1911 ra đi tìm đường cứu nước. Quá trình bôn ba khắp châu lục, vừa lao động, vừa học hỏi. Năm 1920 đọc \"Luận cương của Lênin về vấn đề dân tộc và thuộc địa\" → bước ngoặt quyết định, xác định con đường cứu nước theo cách mạng vô sản."
+  },
+  { 
+    period: "1920 → 2-1930", 
+    title: "Hình thành nội dung cơ bản", 
+    icon: Star, 
+    color: "from-yellow-500 to-orange-500",
+    content: "Hồ Chí Minh tham gia sáng lập Đảng Cộng sản Pháp, hoạt động trong Quốc tế Cộng sản. Tích cực truyền bá Mác – Lênin vào Việt Nam. Tác phẩm tiêu biểu: Đường Kách mệnh (1927). Ngày 3-2-1930 thành lập Đảng Cộng sản Việt Nam → mốc quan trọng đánh dấu sự hình thành cơ bản tư tưởng Hồ Chí Minh về cách mạng Việt Nam."
+  },
+  { 
+    period: "1930 → 1941", 
+    title: "Vượt qua thử thách", 
+    icon: Award, 
+    color: "from-green-500 to-blue-500",
+    content: "Phong trào cách mạng gặp nhiều khó khăn, bị khủng bố đàn áp. Hồ Chí Minh vẫn kiên định con đường giải phóng dân tộc gắn với chủ nghĩa xã hội. Tiếp tục hoạt động ở quốc tế, chuẩn bị lực lượng cho cách mạng trong nước."
+  },
+  { 
+    period: "1941 → 1969", 
+    title: "Soi đường cho sự nghiệp", 
+    icon: Sparkles, 
+    color: "from-blue-500 to-purple-500",
+    content: "1941: Hồ Chí Minh về nước, thành lập Việt Minh. 1945: Lãnh đạo Cách mạng Tháng Tám thành công, lập Nhà nước Việt Nam Dân chủ Cộng hòa. Trong kháng chiến chống Pháp, Mỹ: phát triển tư tưởng kháng chiến toàn dân, toàn diện, lâu dài, tự lực cánh sinh. Đến khi Người qua đời (1969), hệ thống tư tưởng đã hoàn chỉnh, trở thành \"ngọn đèn soi đường cho cách mạng Việt Nam\"."
+  },
 ];
 
 export default function DevelopmentTimeline() {
@@ -32,12 +62,13 @@ export default function DevelopmentTimeline() {
                     <IconComponent className="h-4 w-4 text-white" />
                   </div>
                   <div className="bg-slate-800/50 rounded-2xl p-6 flex-1 border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                      <div>
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between">
+                      <div className="flex-1">
                         <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
-                        <p className="text-gray-400 text-sm">{item.period}</p>
+                        <p className="text-gray-400 text-sm mb-3">{item.period}</p>
+                        <p className="text-gray-300 text-sm leading-relaxed">{item.content}</p>
                       </div>
-                      <div className={`hidden md:block w-2 h-16 rounded-full bg-gradient-to-b ${item.color} opacity-50`}></div>
+                      <div className={`hidden md:block w-2 h-16 rounded-full bg-gradient-to-b ${item.color} opacity-50 ml-4`}></div>
                     </div>
                   </div>
                 </div>
@@ -45,23 +76,31 @@ export default function DevelopmentTimeline() {
             })}
           </div>
         </div>
-        <div className="mt-8 grid md:grid-cols-2 gap-6 text-sm text-gray-300">
-          <div className="bg-slate-800/50 rounded-2xl p-5 border border-slate-700/50">
-            <h5 className="font-semibold text-white mb-2">Các thời kỳ tiêu biểu</h5>
-            <ul className="space-y-2 text-gray-400">
-              <li>▪ Trước 5-6-1911: Hình thành tư tưởng yêu nước, chí hướng cứu nước.</li>
-              <li>▪ 5-6-1911 → 30-12-1920: Chọn con đường cách mạng vô sản.</li>
-              <li>▪ 31-12-1920 → 2-9-1930: Hình thành nội dung cơ bản về cách mạng Việt Nam.</li>
-              <li>▪ 2-9-1930 → 28-1-1941: Vượt qua thử thách, giữ vững đường lối.</li>
-              <li>▪ 29-1-1941 → 2-9-1969: Phát triển, soi đường cho sự nghiệp cách mạng.</li>
-            </ul>
-          </div>
-          <div className="bg-slate-800/50 rounded-2xl p-5 border border-slate-700/50">
-            <h5 className="font-semibold text-white mb-2">Ý nghĩa</h5>
-            <p className="text-gray-400 leading-relaxed">
-              Cách phân kỳ giúp theo dõi tiến trình hoàn thiện tư tưởng từ tìm tòi, xác định chủ nghĩa
-              đến xây dựng lý luận và chỉ đạo thực tiễn cách mạng.
-            </p>
+        <div className="mt-8 bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl p-6 border border-slate-700/50">
+          <h5 className="font-semibold text-white mb-4 text-center text-lg">Tổng kết quá trình phát triển</h5>
+          <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-300">
+            <div>
+              <h6 className="font-semibold text-orange-300 mb-3">Các mốc quan trọng</h6>
+              <ul className="space-y-2 text-gray-400">
+                <li>• <strong>5-6-1911:</strong> Ra đi tìm đường cứu nước</li>
+                <li>• <strong>1920:</strong> Đọc Luận cương Lênin - bước ngoặt quyết định</li>
+                <li>• <strong>3-2-1930:</strong> Thành lập Đảng Cộng sản Việt Nam</li>
+                <li>• <strong>1941:</strong> Về nước, thành lập Việt Minh</li>
+                <li>• <strong>1945:</strong> Cách mạng Tháng Tám thành công</li>
+                <li>• <strong>1969:</strong> Hệ thống tư tưởng hoàn chỉnh</li>
+              </ul>
+            </div>
+            <div>
+              <h6 className="font-semibold text-orange-300 mb-3">Ý nghĩa lịch sử</h6>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                Quá trình phát triển tư tưởng Hồ Chí Minh phản ánh sự vận động từ tìm tòi, khám phá đến xác định con đường cách mạng, từ xây dựng lý luận đến chỉ đạo thực tiễn.
+              </p>
+              <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/30">
+                <p className="text-orange-300 font-medium text-center text-sm">
+                  <strong>"Ngọn đèn soi đường cho cách mạng Việt Nam"</strong>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
