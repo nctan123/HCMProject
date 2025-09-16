@@ -11,6 +11,36 @@ export default function Home() {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [videoInput, setVideoInput] = useState('');
+  const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/embed/dQw4w9WgXcQ');
+
+  const normalizeYouTubeUrl = (url: string): string | null => {
+    try {
+      const trimmed = url.trim();
+      if (!trimmed) return null;
+      // Already embed
+      if (trimmed.includes('/embed/')) return trimmed;
+      const u = new URL(trimmed);
+      // youtu.be/<id>
+      if (u.hostname === 'youtu.be') {
+        const id = u.pathname.replace('/', '');
+        return id ? `https://www.youtube.com/embed/${id}` : null;
+      }
+      // youtube.com/watch?v=<id>
+      if (u.hostname.includes('youtube.com')) {
+        const v = u.searchParams.get('v');
+        if (v) return `https://www.youtube.com/embed/${v}`;
+        // shorts
+        if (u.pathname.startsWith('/shorts/')) {
+          const id = u.pathname.split('/')[2];
+          return id ? `https://www.youtube.com/embed/${id}` : null;
+        }
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -440,6 +470,89 @@ export default function Home() {
                         </ul>
                       </div>
                     </div>
+                    <div className="mt-8 space-y-3">
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          1) Kiên định con đường độc lập dân tộc gắn liền với CNXH
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Chính sách đối ngoại độc lập, tự chủ; đa phương hóa, đa dạng hóa quan hệ quốc tế; bảo vệ chủ quyền, tạo môi trường hòa bình phát triển.</p>
+                          <p className="text-gray-400">Ví dụ: Quan hệ đối tác chiến lược/toàn diện với nhiều nước; ký FTA, chủ động hội nhập.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://dangcongsan.vn/van-kien-dai-hoi-xiii-cua-dang/toan-van-noi-dung-dai-hoi-lan-thu-xiii-cua-dang-629272.html" target="_blank" rel="noreferrer">Văn kiện Đại hội XIII</a>
+                          </div>
+                        </div>
+                      </details>
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          2) Phát triển kinh tế thị trường định hướng XHCN
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Kết hợp hiệu quả cơ chế thị trường với vai trò điều tiết của Nhà nước nhằm bảo đảm công bằng xã hội, giữ vai trò chủ đạo ở các lĩnh vực then chốt.</p>
+                          <p className="text-gray-400">Ví dụ: Thu hút FDI, giảm nghèo bền vững, nông thôn mới, y tế/giáo dục công.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://quochoi.vn/" target="_blank" rel="noreferrer">Quốc hội</a>
+                            <a className="underline hover:text-gray-300" href="https://chinhphu.vn/" target="_blank" rel="noreferrer">Chính phủ</a>
+                          </div>
+                        </div>
+                      </details>
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          3) Xây dựng Nhà nước pháp quyền XHCN của dân, do dân, vì dân
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Hoàn thiện thể chế, thượng tôn pháp luật, phòng chống tham nhũng, nâng cao hiệu lực quản lý nhà nước.</p>
+                          <p className="text-gray-400">Ví dụ: Đẩy mạnh lập pháp; chiến dịch "đốt lò" tăng niềm tin của nhân dân.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://moj.gov.vn/" target="_blank" rel="noreferrer">Bộ Tư pháp</a>
+                            <a className="underline hover:text-gray-300" href="https://nhandan.vn/chong-tham-nhung" target="_blank" rel="noreferrer">Chống tham nhũng</a>
+                          </div>
+                        </div>
+                      </details>
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          4) Xây dựng Đảng trong sạch, vững mạnh
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Tự phê bình và phê bình; ngăn chặn suy thoái tư tưởng chính trị, đạo đức, lối sống; chống "tự diễn biến", "tự chuyển hóa".</p>
+                          <p className="text-gray-400">Ví dụ: Nghị quyết Trung ương 4 (khóa XI, XII) về xây dựng, chỉnh đốn Đảng.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://dangcongsan.vn/" target="_blank" rel="noreferrer">Đảng Cộng sản Việt Nam</a>
+                          </div>
+                        </div>
+                      </details>
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          5) Phát huy sức mạnh đại đoàn kết toàn dân tộc
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Xây dựng khối đoàn kết trên nền tảng liên minh công – nông – trí; mở rộng tới các tầng lớp khác và người Việt Nam ở nước ngoài.</p>
+                          <p className="text-gray-400">Ví dụ: Vai trò của Mặt trận Tổ quốc trong huy động nguồn lực phòng chống dịch, cứu trợ thiên tai.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://www.mattran.org.vn/" target="_blank" rel="noreferrer">Mặt trận Tổ quốc Việt Nam</a>
+                          </div>
+                        </div>
+                      </details>
+                      <details className="group bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                        <summary className="cursor-pointer list-none flex justify-between items-center text-white font-medium">
+                          6) Xây dựng văn hóa và con người Việt Nam thời kỳ mới
+                          <span className="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <div className="mt-3 text-sm text-gray-300 space-y-2">
+                          <p>Coi văn hóa là nền tảng tinh thần và động lực phát triển; giáo dục đạo đức, lối sống, lý tưởng cách mạng cho thế hệ trẻ; bảo tồn và phát huy di sản.</p>
+                          <p className="text-gray-400">Ví dụ: Đổi mới giáo dục, chính sách phát huy giá trị văn hóa truyền thống song hành tiếp thu tinh hoa nhân loại.</p>
+                          <div className="text-xs text-gray-400 space-x-2">
+                            <a className="underline hover:text-gray-300" href="https://bvhttdl.gov.vn/" target="_blank" rel="noreferrer">Bộ VHTT&DL</a>
+                            <a className="underline hover:text-gray-300" href="https://moet.gov.vn/" target="_blank" rel="noreferrer">Bộ GD&ĐT</a>
+                          </div>
+                        </div>
+                      </details>
+                    </div>
                   </div>
                 </section>
               )}
@@ -549,7 +662,99 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Removed Video and AI Usage from sidebar; moved to tabs */}
+              {/* Video Tab */}
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30 sticky top-24">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <Play className="h-6 w-6 mr-2 text-yellow-400" />
+                  Video Tài Liệu
+                </h3>
+                <div className="mb-4 grid gap-2 md:grid-cols-[1fr_auto]">
+                  <input
+                    value={videoInput}
+                    onChange={(e) => setVideoInput(e.target.value)}
+                    placeholder="Dán link YouTube (watch/shorts/youtu.be)"
+                    className="w-full px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-600 text-sm text-gray-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/40"
+                  />
+                  <button
+                    onClick={() => {
+                      const next = normalizeYouTubeUrl(videoInput);
+                      if (next) setVideoUrl(next);
+                    }}
+                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm"
+                  >
+                    Áp dụng
+                  </button>
+                </div>
+                <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl mb-4 overflow-hidden border border-slate-600 group cursor-pointer">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src={videoUrl} 
+                    title="Tư tưởng Hồ Chí Minh - Hành trình vĩ đại"
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                    className="rounded-xl group-hover:scale-105 transition-transform duration-500"
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* AI Usage Tab */}
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30 sticky top-24">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <Brain className="h-6 w-6 mr-2 text-yellow-400" />
+                  AI Sử Dụng
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-4 rounded-xl border border-orange-500/20">
+                    <h4 className="font-semibold text-orange-300 mb-2 text-sm flex items-center">
+                      <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
+                      Cam kết liêm chính
+                    </h4>
+                    <p className="text-xs text-gray-300 italic leading-relaxed">
+                      "AI chỉ hỗ trợ giao diện và tương tác. 
+                      Nội dung học thuật do sinh viên nghiên cứu và biên soạn."
+                    </p>
+                  </div>
+                  <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-4 rounded-xl border border-purple-500/20">
+                    <h4 className="font-semibold text-purple-300 mb-2 text-sm">Best practices khi dùng AI</h4>
+                    <ul className="list-disc pl-5 text-xs text-gray-300 space-y-1">
+                      <li>Kiểm chứng nguồn, trích dẫn rõ ràng.</li>
+                      <li>Phân biệt UI/UX do AI hỗ trợ và nội dung học thuật của sinh viên.</li>
+                      <li>Không copy nguyên văn, luôn diễn đạt và hiểu bản chất.</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-4 rounded-xl border border-blue-500/20">
+                    <h4 className="font-semibold text-blue-300 mb-3 text-sm flex items_center">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                      Phân định vai trò
+                    </h4>
+                    <div className="space-y-2 text-xs">
+                      <div className="flex justify-between">
+                        <span className="text-purple-300">AI:</span>
+                        <span className="text-gray-400">UI/UX, Quiz</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-green-300">Sinh viên:</span>
+                        <span className="text-gray-400">Nội dung, Phân tích</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-4 rounded-xl border border-green-500/20">
+                    <h4 className="font-semibold text-green-300 mb-2 text-sm flex items-center">
+                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                      Nguồn tham khảo
+                    </h4>
+                    <div className="space-y-1 text-xs text-gray-400">
+                      <div>• Giáo trình chính thức</div>
+                      <div>• NXB Chính trị Quốc gia</div>
+                      <div>• Tài liệu Đảng</div>
+                      <div>• <a className="underline hover:text-gray-300" href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a></div>
+                      <div>• <a className="underline hover:text-gray-300" href="https://libgen.is/" target="_blank" rel="noreferrer">Libgen (tham khảo)</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
