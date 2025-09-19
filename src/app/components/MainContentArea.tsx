@@ -11,6 +11,16 @@ export default function MainContentArea({
   activeSection, 
   setActiveSection
 }: Props) {
+  // Show QuizGame in full screen when selected
+  if (activeSection === 6) {
+    return (
+      <main className="relative z-10">
+        <SectionNav activeSection={activeSection} setActiveSection={setActiveSection} />
+        <SectionRenderer activeSection={activeSection} />
+      </main>
+    );
+  }
+
   return (
     <main className="relative z-10">
       <SectionNav activeSection={activeSection} setActiveSection={setActiveSection} />

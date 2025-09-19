@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Trophy, ChevronRight, CheckCircle, XCircle, RotateCcw } from "lucide-react";
+import { Trophy, ChevronRight, CheckCircle, XCircle, RotateCcw, Gamepad2 } from "lucide-react";
 import { useAudio } from "../hooks/useAudio";
 import AudioController from "./AudioController";
+import QuizGameInfo from "./QuizGameInfo";
+import GameFeaturesInfo from "./GameFeaturesInfo";
 
 type QuizQuestion = {
   question: string;
@@ -224,11 +226,19 @@ export default function QuizSidebar({ questions = defaultQuestions }: Props) {
   }, [effectsVolume, correctSound, wrongSound, completeSound]);
 
   return (
-    <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30 sticky top-24">
-      <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-        <Trophy className="h-6 w-6 mr-2 text-yellow-400" />
-        Quiz Thử Thách
-      </h3>
+    <div className="space-y-6">
+      {/* Quiz Game Info */}
+      <QuizGameInfo />
+      
+      {/* Game Features Info */}
+      <GameFeaturesInfo />
+      
+      {/* Original Quiz */}
+      <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30">
+        <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+          <Trophy className="h-6 w-6 mr-2 text-yellow-400" />
+          Quiz Thử Thách
+        </h3>
 
       {/* Audio Controller */}
       <AudioController
@@ -333,6 +343,7 @@ export default function QuizSidebar({ questions = defaultQuestions }: Props) {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 }

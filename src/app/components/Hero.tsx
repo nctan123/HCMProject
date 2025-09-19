@@ -2,14 +2,37 @@
 import { useEffect, useState } from "react";
 import { BookOpen, Star } from "lucide-react";
 
+type StarPosition = {
+  left: number;
+  top: number;
+  animationDelay: number;
+  animationDuration: number;
+};
+
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
+  const [stars, setStars] = useState<StarPosition[]>([]);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      // Generate star positions only on client side
+      const newStars = [...Array(20)].map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        animationDelay: Math.random() * 2,
+        animationDuration: 2 + Math.random() * 2,
+      }));
+      setStars(newStars);
+    }
+  }, [isClient]);
 
   return (
     <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -19,15 +42,15 @@ export default function Hero() {
       ></div>
 
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {isClient && stars.map((star, i) => (
           <div
             key={i}
             className="absolute animate-bounce"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2 + Math.random() * 2}s`,
+              left: `${star.left}%`,
+              top: `${star.top}%`,
+              animationDelay: `${star.animationDelay}s`,
+              animationDuration: `${star.animationDuration}s`,
             }}
           >
             <Star className="h-4 w-4 text-yellow-300/30" />
