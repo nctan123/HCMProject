@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { SpecialRound } from '../data/gameFeatures';
 
 type Props = {
@@ -20,6 +20,23 @@ export default function SpecialRoundSystem({
   const [showRoundIntro, setShowRoundIntro] = useState(false);
   const [countdown, setCountdown] = useState(3);
 
+  const startCountdown = useCallback(() => {
+    setCountdown(3);
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setShowRoundIntro(false);
+          if (specialRound) {
+            onSpecialRoundStart(specialRound);
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, [specialRound, onSpecialRoundStart]);
+
   // Determine if this should be a special round
   useEffect(() => {
     const shouldTriggerSpecialRound = () => {
@@ -37,27 +54,16 @@ export default function SpecialRoundSystem({
       if (round) {
         setSpecialRound(round);
         setShowRoundIntro(true);
-        startCountdown();
       }
     }
   }, [currentRound]);
 
-  const startCountdown = () => {
-    setCountdown(3);
-    const timer = setInterval(() => {
-      setCountdown(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          setShowRoundIntro(false);
-          if (specialRound) {
-            onSpecialRoundStart(specialRound);
-          }
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-  };
+  // Start countdown when special round is set
+  useEffect(() => {
+    if (specialRound && showRoundIntro) {
+      startCountdown();
+    }
+  }, [specialRound, showRoundIntro, startCountdown]);
 
   const getRoundIcon = (type: string) => {
     switch (type) {

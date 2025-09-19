@@ -4,7 +4,7 @@ import DevelopmentTimeline from './sections/DevelopmentTimeline';
 import PartyApplication from './sections/PartyApplication';
 import Video from './sections/Video';
 import AIUse from './sections/AIUse';
-import QuizGame from './QuizGame';
+import GameManager from './GameManager';
 
 type Props = {
   activeSection: number;
@@ -25,7 +25,7 @@ export default function SectionRenderer({ activeSection }: Props) {
     case 5:
       return <AIUse />;
     case 6:
-      return <QuizGame />;
+      return <GameManager />;
     default:
       return <HistoricalContext />;
   }

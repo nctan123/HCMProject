@@ -5,6 +5,7 @@ import { useAudio } from "../hooks/useAudio";
 import AudioController from "./AudioController";
 import QuizGameInfo from "./QuizGameInfo";
 import GameFeaturesInfo from "./GameFeaturesInfo";
+import TimeControlInfo from "./TimeControlInfo";
 
 type QuizQuestion = {
   question: string;
@@ -232,6 +233,9 @@ export default function QuizSidebar({ questions = defaultQuestions }: Props) {
       
       {/* Game Features Info */}
       <GameFeaturesInfo />
+      
+      {/* Time Control Info */}
+      <TimeControlInfo />
       
       {/* Original Quiz */}
       <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30">

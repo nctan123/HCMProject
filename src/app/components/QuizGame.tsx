@@ -8,6 +8,7 @@ import PlayerManager from './PlayerManager';
 import PowerUpSystem from './PowerUpSystem';
 import ChallengeSystem from './ChallengeSystem';
 import SpecialRoundSystem from './SpecialRoundSystem';
+import TimeControlSystem from './TimeControlSystem';
 
 type GameState = 'waiting' | 'playing' | 'showingAnswer' | 'showingScore' | 'finished';
 type Player = {
@@ -39,16 +40,28 @@ type ActivePowerUp = {
   playerId: number;
 };
 
-export default function QuizGame() {
+type QuizGameProps = {
+  initialPlayers?: Player[];
+  gameMode?: string;
+  difficulty?: string;
+  timeControlEnabled?: boolean;
+};
+
+export default function QuizGame({
+  initialPlayers = [],
+  gameMode: propGameMode = 'individual',
+  difficulty: propDifficulty = 'medium',
+  timeControlEnabled: propTimeControlEnabled = false
+}: QuizGameProps) {
   const [gameState, setGameState] = useState<GameState>('waiting');
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [players, setPlayers] = useState<Player[]>([]);
+  const [players, setPlayers] = useState<Player[]>(initialPlayers);
   const [teams, setTeams] = useState<Team[]>([]);
-  const [gameMode, setGameMode] = useState('individual');
-  const [difficulty, setDifficulty] = useState('medium');
+  const [gameMode, setGameMode] = useState(propGameMode);
+  const [difficulty, setDifficulty] = useState(propDifficulty);
   const [winner, setWinner] = useState<Player | null>(null);
   const [winningTeam, setWinningTeam] = useState<Team | null>(null);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
@@ -57,6 +70,9 @@ export default function QuizGame() {
   const [currentSpecialRound, setCurrentSpecialRound] = useState<any>(null);
   const [comboMultiplier, setComboMultiplier] = useState(1);
   const [showEffects, setShowEffects] = useState(false);
+  const [timeControlEnabled, setTimeControlEnabled] = useState(propTimeControlEnabled);
+  const [timeControlSettings, setTimeControlSettings] = useState<any>(null);
+  const [registeredPlayers, setRegisteredPlayers] = useState<any[]>([]);
 
   // Audio hooks
   const { play: playCorrectSound } = useAudio('/audio/correct.mp3');
@@ -64,21 +80,12 @@ export default function QuizGame() {
   const { play: playCompleteSound } = useAudio('/audio/complete.mp3');
   const { play: playBackgroundMusic, pause: pauseBackgroundMusic } = useAudio('/audio/background-music.mp3', { loop: true });
 
-  // Initialize players with more default players
+  // Update players when initialPlayers prop changes
   useEffect(() => {
-    const initialPlayers: Player[] = Array.from({ length: 10 }, (_, i) => ({
-      id: i + 1,
-      name: `Người chơi ${i + 1}`,
-      score: 0,
-      isActive: true,
-      isEliminated: false,
-      streak: 0,
-      powerUps: [],
-      achievements: [],
-      multiplier: 1
-    }));
-    setPlayers(initialPlayers);
-  }, []);
+    if (initialPlayers.length > 0) {
+      setPlayers(initialPlayers);
+    }
+  }, [initialPlayers]);
 
   // Timer effect
   useEffect(() => {
@@ -265,6 +272,45 @@ export default function QuizGame() {
     setComboMultiplier(1);
   };
 
+  // Time control functions
+  const handleTimeControlGameStart = () => {
+    setGameStarted(true);
+    setGameState('playing');
+    setQuestionIndex(0);
+    setCurrentQuestion(quizQuestions[0]);
+    setTimeLeft(quizQuestions[0].timeLimit);
+    setSelectedAnswer(null);
+    setShowCorrectAnswer(false);
+    playBackgroundMusic();
+  };
+
+  const handlePlayerJoin = (player: any) => {
+    setRegisteredPlayers(prev => [...prev, player]);
+    
+    // Apply late join penalty
+    if (player.isLate && timeControlSettings) {
+      setPlayers(prev => prev.map(p => 
+        p.id === player.id ? { 
+          ...p, 
+          score: Math.max(0, p.score - timeControlSettings.lateJoinPenalty) 
+        } : p
+      ));
+    }
+  };
+
+  const handlePlayerKick = (playerId: number) => {
+    setPlayers(prev => prev.map(player => 
+      player.id === playerId ? { ...player, isActive: false } : player
+    ));
+    setRegisteredPlayers(prev => 
+      prev.map(p => p.id === playerId ? { ...p, isActive: false } : p)
+    );
+  };
+
+  const handleTimeControlSettingsChange = (settings: any) => {
+    setTimeControlSettings(settings);
+  };
+
   const handleTimeUp = () => {
     if (gameState !== 'playing') return;
     
@@ -385,6 +431,41 @@ export default function QuizGame() {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8">
+            {/* Time Control Toggle */}
+            <div className="lg:col-span-2 mb-6">
+              <div className="bg-white/5 rounded-xl p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Kiểm soát thời gian</h3>
+                    <p className="text-gray-300 text-sm">
+                      Bật tính năng này để kiểm soát thời gian tham gia của người chơi
+                    </p>
+                  </div>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={timeControlEnabled}
+                      onChange={(e) => setTimeControlEnabled(e.target.checked)}
+                      className="sr-only peer"
+                    />
+                    <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-yellow-300/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* Time Control System */}
+            {timeControlEnabled && (
+              <div className="lg:col-span-2 mb-6">
+                <TimeControlSystem
+                  onGameStart={handleTimeControlGameStart}
+                  onPlayerJoin={handlePlayerJoin}
+                  onPlayerKick={handlePlayerKick}
+                  onSettingsChange={handleTimeControlSettingsChange}
+                />
+              </div>
+            )}
+
             {/* Player Management */}
             <div>
               <PlayerManager
