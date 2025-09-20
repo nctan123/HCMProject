@@ -1,9 +1,10 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-import {QuizQuestion, quizQuestions} from '../data/quizData';
+import {QuizQuestion, quizQuestions} from '../data/quizData'; // TypeScript import
 
 export default function QuizComponent() {
+    const [allQuestions, setAllQuestions] = useState<QuizQuestion[]>([]);
     const [questions, setQuestions] = useState<QuizQuestion[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -21,16 +22,15 @@ export default function QuizComponent() {
         let filteredQuestions = quizQuestions;
 
         if (selectedCategory !== 'Tất cả') {
-            filteredQuestions = filteredQuestions.filter(q => q.category === selectedCategory);
+            filteredQuestions = filteredQuestions.filter((q: QuizQuestion) => q.category === selectedCategory);
         }
 
         if (selectedDifficulty !== 'all') {
-            filteredQuestions = filteredQuestions.filter(q => q.difficulty === selectedDifficulty);
+            filteredQuestions = filteredQuestions.filter((q: QuizQuestion) => q.difficulty === selectedDifficulty);
         }
 
-        // Shuffle questions
-        filteredQuestions = filteredQuestions.sort(() => Math.random() - 0.5);
-        setQuestions(filteredQuestions);
+        // Store all filtered questions for random selection
+        setAllQuestions(filteredQuestions);
     }, [selectedCategory, selectedDifficulty]);
 
     // Timer countdown
@@ -47,6 +47,16 @@ export default function QuizComponent() {
     }, [timerActive, timeLeft]);
 
     const startQuiz = () => {
+        // Check if we have enough questions
+        if (allQuestions.length < 10) {
+            alert(`Không đủ câu hỏi! Chỉ có ${allQuestions.length} câu hỏi. Vui lòng chọn danh mục khác.`);
+            return;
+        }
+
+        // Random 10 questions from all filtered questions
+        const shuffledQuestions = [...allQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
+        setQuestions(shuffledQuestions);
+        
         setQuizStarted(true);
         setCurrentQuestionIndex(0);
         setScore(0);
@@ -86,6 +96,16 @@ export default function QuizComponent() {
     };
 
     const resetQuiz = () => {
+        // Check if we have enough questions
+        if (allQuestions.length < 10) {
+            alert(`Không đủ câu hỏi! Chỉ có ${allQuestions.length} câu hỏi. Vui lòng chọn danh mục khác.`);
+            return;
+        }
+
+        // Random 10 questions again when resetting
+        const shuffledQuestions = [...allQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
+        setQuestions(shuffledQuestions);
+        
         setQuizStarted(false);
         setQuizCompleted(false);
         setCurrentQuestionIndex(0);
@@ -109,7 +129,7 @@ export default function QuizComponent() {
 
                     <div className="text-center">
                         <p className="text-lg text-gray-300 mb-4">
-                            Số câu: <span className="font-bold text-yellow-400">{questions.length}</span>
+                            Số câu: <span className="font-bold text-yellow-400">10</span> câu
                         </p>
                         <button
                             onClick={startQuiz}
@@ -180,6 +200,18 @@ export default function QuizComponent() {
 
     const currentQuestion = questions[currentQuestionIndex];
 
+    // Safety check
+    if (!currentQuestion) {
+        return (
+            <div className="max-w-4xl mx-auto p-6">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center">
+                    <h2 className="text-2xl font-bold text-white mb-4">Đang tải câu hỏi...</h2>
+                    <p className="text-gray-300">Vui lòng chờ trong giây lát.</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="max-w-4xl mx-auto p-6">
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
@@ -231,7 +263,7 @@ export default function QuizComponent() {
 
                 {/* Answer Options */}
                 <div className="space-y-4 mb-8">
-                    {currentQuestion.options.map((option, index) => (
+                    {currentQuestion.options.map((option: string, index: number) => (
                         <button
                             key={index}
                             onClick={() => handleAnswerSelect(index)}
