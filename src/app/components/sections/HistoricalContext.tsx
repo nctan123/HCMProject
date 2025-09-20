@@ -1,4 +1,4 @@
-import { Flag, Globe } from "lucide-react";
+import { Flag, Globe, ArrowRight } from "lucide-react";
 
 export default function HistoricalContext() {
   return (
@@ -19,7 +19,7 @@ export default function HistoricalContext() {
           khách quan và chủ quan.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 relative">
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 p-6 rounded-2xl border border-red-500/30">
               <h4 className="text-xl font-bold text-white mb-4 flex items-center">
@@ -29,12 +29,21 @@ export default function HistoricalContext() {
               
               {/* Hình ảnh lịch sử Việt Nam */}
               <div className="mb-6">
-                <h5 className="text-lg font-semibold text-white mb-4 text-center">Hình ảnh lịch sử Việt Nam cuối thế kỷ XIX - đầu thế kỷ XX</h5>
+                <h5 className="text-lg font-semibold text-white mb-4 text-center">
+                  <a 
+                    href="https://nhiepanhdoisong.vn/hinh-anh-viet-nam-cuoi-the-ky-xix-dau-the-ky-xx-14677.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-yellow-400 transition-colors duration-300 cursor-pointer underline decoration-yellow-400 hover:decoration-white"
+                  >
+                    Hình ảnh lịch sử Việt Nam cuối thế kỷ XIX - đầu thế kỷ XX
+                  </a>
+                </h5>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-slate-800/30 p-3 rounded-xl border border-slate-600/30">
                     <div className="aspect-video rounded-lg overflow-hidden mb-3">
                       <img 
-                        src="/boicanhtrongnuoc.jpg" 
+                        src="/cho_hom_duc_vien_hn.jpg" 
                         alt="Bối cảnh trong nước Việt Nam cuối thế kỷ XIX - đầu thế kỷ XX" 
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
@@ -67,18 +76,18 @@ export default function HistoricalContext() {
                 </div>
               </div>
               
-              <div className="space-y-3 text-gray-300">
+              <div className="space-y-2 text-gray-300">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Sự khủng hoảng của chế độ phong kiến</p>
+                  <p>Khủng hoảng phong kiến</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Thất bại của các phong trào yêu nước theo các hệ tư tưởng cũ (phong kiến, tư sản)</p>
+                  <p>Thất bại phong trào yêu nước theo tư tưởng cũ</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Nỗi đau mất nước của dân tộc</p>
+                  <p>Nỗi đau mất nước</p>
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Bối cảnh xã hội khi thực dân Pháp xâm lược và đặt ách đô hộ đã đặt ra vấn đề tồn vong dân tộc.
@@ -102,6 +111,16 @@ export default function HistoricalContext() {
               
               {/* Hình ảnh Cách mạng Tháng Mười Nga */}
               <div className="mb-4">
+                <h5 className="text-lg font-semibold text-blue-300 mb-4 text-center">
+                  <a 
+                    href="https://hvlq.vn/trang-chu/hoc-tap-va-lam-theo-tu-tuong-dao-duc-phong-cach-ho-chi-minh/tu-tuong-ho-chi-minh/cach-mang-thang-muoi-nga-la-thuc-tien-sinh-dong-dinh-huong-tu-tuong-ho-chi-minh-ve-con-duong-cuu-nuoc-giai-phong-dan-toc.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-300 hover:text-yellow-400 transition-colors duration-300 cursor-pointer underline decoration-blue-300 hover:decoration-yellow-400"
+                  >
+                    Cách mạng Tháng Mười Nga (1917) - Mở ra thời đại cách mạng vô sản
+                  </a>
+                </h5>
                 <div className="aspect-video rounded-xl overflow-hidden mb-3">
                   <img 
                     src="/cmt10Nga.png" 
@@ -109,27 +128,25 @@ export default function HistoricalContext() {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <p className="text-sm text-blue-300 font-medium text-center">
-                  Cách mạng Tháng Mười Nga (1917) - Mở ra thời đại cách mạng vô sản
-                </p>
+               
               </div>
               
-              <div className="space-y-3 text-gray-300">
+              <div className="space-y-2 text-gray-300">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Sự phát triển của chủ nghĩa tư bản chuyển sang giai đoạn đế quốc chủ nghĩa</p>
+                  <p>Chủ nghĩa tư bản chuyển sang đế quốc chủ nghĩa</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Sự bóc lột thuộc địa lan rộng</p>
+                  <p>Bóc lột thuộc địa lan rộng</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Thắng lợi của Cách mạng Tháng Mười Nga năm 1917</p>
+                  <p>Thắng lợi Cách mạng Tháng Mười Nga 1917</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Mở ra thời đại mới – thời đại cách mạng vô sản</p>
+                  <p>Mở ra thời đại cách mạng vô sản</p>
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Bối cảnh quốc tế này đã cung cấp những tiền đề quan trọng, đặc biệt là chủ nghĩa Mác - Lênin,
@@ -143,7 +160,6 @@ export default function HistoricalContext() {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

@@ -16,6 +16,22 @@ export default function FormationBases() {
         <p className="text-gray-300 text-sm leading-relaxed mb-8">
           Các nhân tố đã ảnh hưởng sâu sắc đến việc hình thành tư tưởng Hồ Chí Minh bao gồm cơ sở thực tiễn, cơ sở lý luận và nhân tố chủ quan của chính Người.
         </p>
+        
+        {/* Từ khóa nhấn mạnh */}
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-4 rounded-xl border border-green-500/30">
+            <h5 className="text-sm font-bold text-green-400 mb-2">Cơ sở thực tiễn</h5>
+            <p className="text-xs text-gray-300">Mất nước – Khủng hoảng – Cần con đường mới</p>
+          </div>
+          <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-4 rounded-xl border border-blue-500/30">
+            <h5 className="text-sm font-bold text-blue-400 mb-2">Cơ sở lý luận</h5>
+            <p className="text-xs text-gray-300">Truyền thống dân tộc – Tinh hoa nhân loại – Mác–Lênin (quyết định)</p>
+          </div>
+          <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-4 rounded-xl border border-orange-500/30">
+            <h5 className="text-sm font-bold text-orange-400 mb-2">Nhân tố chủ quan</h5>
+            <p className="text-xs text-gray-300">Phẩm chất – Tài năng</p>
+          </div>
+        </div>
 
         {/* I. Cơ sở thực tiễn */}
         <div className="mb-8">
@@ -68,7 +84,7 @@ export default function FormationBases() {
               <div className="bg-slate-800/30 p-4 rounded-xl border border-slate-600/30">
                 <h5 className="text-lg font-semibold text-blue-300 mb-3">Tinh hoa văn hóa nhân loại</h5>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Tinh hoa văn hóa nhân loại mà Người đã tiếp thu trong quá trình bôn ba tìm đường cứu nước đã làm phong phú thêm vốn tri thức và tư duy của Người. Việc chọn lọc và vận dụng những giá trị văn hóa, tư tưởng tiên tiến từ các nền văn minh khác nhau đã giúp Người có cái nhìn tổng quát, khách quan và sáng tạo trong việc giải quyết các vấn đề dân tộc.
+                  Tinh hoa văn hóa nhân loại mà Người tiếp thu trong quá trình bôn ba tìm đường cứu nước bao gồm: giá trị nhân nghĩa, từ bi, hòa hiếu từ Nho giáo, Phật giáo phương Đông; các tư tưởng dân chủ, tự do, bình đẳng, bác ái từ phương Tây. Hồ Chí Minh luôn tiếp nhận có chọn lọc, biến thành vốn tri thức phục vụ sự nghiệp giải phóng dân tộc.
                 </p>
               </div>
               
@@ -104,11 +120,18 @@ export default function FormationBases() {
               <div className="bg-slate-800/30 p-4 rounded-xl border border-slate-600/30">
                 <h5 className="text-lg font-semibold text-orange-300 mb-3">Tài năng hoạt động</h5>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Tài năng hoạt động, tổng kết thực tiễn phát triển lý luận của Người là một nhân tố đặc biệt quan trọng. Khả năng kết hợp chặt chẽ giữa lý luận và thực tiễn, tổng kết những kinh nghiệm quý báu từ các phong trào cách mạng và hoạt động của bản thân đã giúp Người phát triển, hoàn thiện tư tưởng của mình. Người đã biến những nguyên lý thành những giải pháp cụ thể, sáng tạo, phù hợp với hoàn cảnh đặc thù của Việt Nam.
+                  Tài năng hoạt động của Hồ Chí Minh thể hiện ở khả năng kết hợp lý luận với thực tiễn, tổng kết kinh nghiệm cách mạng, đồng thời vận dụng và phát triển sáng tạo chủ nghĩa Mác – Lênin phù hợp với hoàn cảnh đặc thù của Việt Nam. Người đã biến những nguyên lý thành những giải pháp cụ thể, sáng tạo, phù hợp với điều kiện cụ thể của cách mạng Việt Nam.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Câu kết nối tổng hợp */}
+        <div className="mt-8 p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-2xl border border-yellow-500/30">
+          <p className="text-center text-gray-300 text-sm leading-relaxed">
+            <strong className="text-yellow-400">Ba trụ cột trên kết hợp chặt chẽ, tạo nên nền tảng toàn diện để Hồ Chí Minh hình thành và phát triển hệ thống tư tưởng cách mạng Việt Nam.</strong>
+          </p>
         </div>
       </div>
     </section>
