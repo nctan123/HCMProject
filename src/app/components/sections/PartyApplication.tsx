@@ -181,10 +181,16 @@ export default function PartyApplication() {
                       <p className="font-semibold text-white">
                         Chính sách quản lý của Nhà nước:
                       </p>
-                      <p className="text-gray-400 text-xs">
+                      <Link
+                        href="https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Luat-Dau-tu-so-61-2020-QH14-321051.aspx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
+                      >
                         Luật Doanh nghiệp (2020), Luật Đầu tư (2020) tạo môi
                         trường pháp lý minh bạch
-                      </p>
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </Link>
                     </div>
                   </div>
 
@@ -194,10 +200,16 @@ export default function PartyApplication() {
                       <p className="font-semibold text-white">
                         Định hướng XHCN:
                       </p>
-                      <p className="text-gray-400 text-xs">
+                      <Link
+                        href="https://molisa.gov.vn/baiviet/228634?tintucID=228634"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
+                      >
                         Chương trình xóa đói giảm nghèo, hỗ trợ y tế và giáo dục
                         miễn phí
-                      </p>
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </Link>
                     </div>
                   </div>
 
@@ -206,7 +218,7 @@ export default function PartyApplication() {
                     <div>
                       <p className="font-semibold text-white">Thành tựu:</p>
                       <Link
-                        href="http://mpi.gov.vn"
+                        href="https://molisa.gov.vn/baiviet/238069"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
@@ -239,7 +251,7 @@ export default function PartyApplication() {
                         Tăng trưởng kinh tế:
                       </p>
                       <Link
-                        href="https://www.worldbank.org"
+                        href="https://tuoitre.vn/viet-nam-dat-muc-tieu-thu-nhap-5000-usd-nguoi-vao-nam-2025-20200929161623221.htm"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
@@ -258,7 +270,7 @@ export default function PartyApplication() {
                         Tiến bộ xã hội:
                       </p>
                       <Link
-                        href="https://quochoi.vn"
+                        href="https://vneconomy.vn/hon-91-trieu-nguoi-tham-gia-bao-hiem-y-te-bao-phu-tren-92-dan-so.htm"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
@@ -273,9 +285,15 @@ export default function PartyApplication() {
                     <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-white">Thách thức:</p>
-                      <p className="text-gray-400 text-xs">
+                      <Link
+                        href="https://careerviet.vn/vi/talentcommunity/ty-le-that-nghiep-o-thanh-thi-cao-hon-nong-thon.35A4EEFD.html#:~:text=Nguy%C3%AAn%20nh%C3%A2n%20t%E1%BB%B7%20l%E1%BB%87%20th%E1%BA%A5t,c%C6%A1%20h%E1%BB%99i%20t%C3%ACm%20vi%E1%BB%87c%20l%C3%A0m"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 text-xs font-medium transition-all duration-200 hover:underline decoration-yellow-400/50 underline-offset-2 hover:scale-105"
+                      >
                         Chênh lệch giàu nghèo giữa thành thị và nông thôn
-                      </p>
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -299,7 +317,7 @@ export default function PartyApplication() {
                     <div>
                       <p className="font-semibold text-white">CMCN 4.0:</p>
                       <Link
-                        href="https://chinhphu.vn"
+                        href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Quyet-dinh-2289-QD-TTg-2020-Chien-luoc-quoc-gia-ve-Cach-mang-cong-nghiep-lan-thu-tu-den-2030-461337.aspx"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
@@ -318,7 +336,7 @@ export default function PartyApplication() {
                         Hội nhập quốc tế:
                       </p>
                       <Link
-                        href="https://www.customs.gov.vn"
+                        href="https://trungtamwto.vn/thong-ke/12065-tong-hop-cac-fta-cua-viet-nam-tinh-den-thang-112018"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
@@ -333,9 +351,15 @@ export default function PartyApplication() {
                     <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-white">Thành tựu:</p>
-                      <p className="text-gray-400 text-xs">
+                      <Link
+                        href="https://trungtamwto.vn/thi-truong-duc/25367-can-can-thuong-mai-hang-hoa-nam-2023-uoc-tinh-xuat-sieu-28-ty-usd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
+                      >
                         Kim ngạch xuất khẩu đạt 355,5 tỷ USD (2023)
-                      </p>
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </Link>
                     </div>
                   </div>
                 </div>
