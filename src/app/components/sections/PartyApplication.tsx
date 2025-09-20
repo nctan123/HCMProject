@@ -341,7 +341,7 @@ export default function PartyApplication() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 text-xs font-medium transition-all duration-200 hover:underline decoration-green-400/50 underline-offset-2 hover:scale-105"
                       >
-                        Tham gia 16 FTA (CPTPP, RCEP, EVFTA)
+                        Tham gia 19 FTA (CPTPP, RCEP, EVFTA)
                         <ExternalLink className="w-3 h-3 opacity-70" />
                       </Link>
                     </div>
