@@ -102,6 +102,36 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: "7",
+    question: "Về lực lượng, tư tưởng HCM khẳng định",
+    options: [
+      "công nhân là tất cả, các tầng lớp khác chỉ hỗ trợ phụ.",
+      "toàn dân tham gia, nền tảng là liên minh công–nông bền chặt.",
+      "nông dân quyết định, các giai cấp còn lại không chi phối.",
+      "tư sản dân tộc trung tâm, nông dân và trí thức bổ trợ.",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "HCM khẳng định toàn dân tham gia cách mạng, với nền tảng là liên minh công-nông bền chặt.",
+    category: "Tư tưởng HCM",
+    difficulty: "medium",
+  },
+  {
+    id: "8",
+    question: "Về phương pháp, Cách mạng giải phóng dân tộc theo HCM cần",
+    options: [
+      "bạo lực cách mạng quần chúng, chính trị–quân sự gắn kết.",
+      "thương lượng lâu dài, hạn chế mọi va chạm đối kháng.",
+      "chờ cách mạng chính quốc, rồi phối hợp từng bước sau.",
+      "sử dụng quân sự thuần túy, bỏ qua đấu tranh chính trị.",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "HCM chủ trương bạo lực cách mạng quần chúng, kết hợp chặt chẽ giữa đấu tranh chính trị và quân sự.",
+    category: "Tư tưởng HCM",
+    difficulty: "medium",
+  },
+  {
+    id: "9",
     question: "Quan niệm cốt lõi của HCM về CNXH nhấn mạnh",
     options: [
       "kế hoạch hóa tuyệt đối, điều khiển toàn bộ sản xuất.",
@@ -116,7 +146,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "8",
+    id: "10",
     question: '"Tiến lên CNXH là tất yếu khách quan" vì',
     options: [
       "nhu cầu đối ngoại yêu cầu đồng dạng thể chế khu vực.",
@@ -131,7 +161,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "9",
+    id: "11",
     question: "Một đặc trưng bản chất của xã hội XHCN là",
     options: [
       "tư hữu TLSX chi phối, cạnh tranh tối đa hóa hiệu quả.",
@@ -146,7 +176,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "10",
+    id: "12",
     question: "Mục tiêu CNXH ở Việt Nam theo HCM hướng tới",
     options: [
       "dân giàu nước mạnh, công bằng dân chủ, đời sống hạnh phúc.",
@@ -161,7 +191,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "easy",
   },
   {
-    id: "11",
+    id: "13",
     question: '"Động lực của CNXH" theo HCM bao gồm chủ yếu',
     options: [
       "tài nguyên thiên nhiên dồi dào, kết hợp ưu đãi thuế quan.",
@@ -176,7 +206,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "12",
+    id: "14",
     question: "Tính chất thời kỳ quá độ lên CNXH được HCM xác định",
     options: [
       "ngắn gọn, tuyến tính, ít mâu thuẫn, ít yêu cầu điều chỉnh.",
@@ -191,37 +221,37 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "13",
-    question: "Nguyên tắc cơ bản trong xây dựng CNXH theo HCM là",
-    options: [
-      "phát triển kinh tế là nhiệm vụ trung tâm duy nhất.",
-      "kết hợp phát triển kinh tế với tiến bộ và công bằng xã hội.",
-      "ưu tiên tăng trưởng trước, phân phối sau.",
-      "tập trung nguồn lực cho công nghiệp, bỏ qua nông nghiệp.",
-    ],
-    correctAnswer: 1,
-    explanation:
-      "Nguyên tắc cơ bản là kết hợp hài hòa giữa phát triển kinh tế với tiến bộ và công bằng xã hội.",
-    category: "Tư tưởng HCM",
-    difficulty: "medium",
-  },
-  {
-    id: "14",
-    question: "Yếu tố quyết định thành công của con đường CNXH ở Việt Nam",
-    options: [
-      "điều kiện tự nhiên thuận lợi và tài nguyên phong phú.",
-      "sự lãnh đạo đúng đắn của Đảng và sức mạnh đại đoàn kết.",
-      "vị trí địa lý chiến lược và quan hệ quốc tế tốt.",
-      "trình độ khoa học công nghệ cao và nguồn vốn dồi dào.",
-    ],
-    correctAnswer: 1,
-    explanation:
-      "Yếu tố quyết định là sự lãnh đạo đúng đắn của Đảng Cộng sản và sức mạnh đại đoàn kết toàn dân tộc.",
-    category: "Tư tưởng HCM",
-    difficulty: "medium",
-  },
-  {
     id: "15",
+    question: "Nhiệm vụ cơ bản thời kỳ quá độ theo HCM bao gồm",
+    options: [
+      "chỉ cải tạo quan hệ sản xuất, chờ lực lượng sản xuất phát triển.",
+      "giữ nguyên cơ cấu cũ, ưu tiên ổn định trên tất cả mục tiêu.",
+      "chú trọng quân sự, các lĩnh vực dân sinh thực hiện sau đó.",
+      "đồng thời cải tạo cũ, xây dựng mới, phát triển LLSX–văn hóa–con người.",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "HCM chủ trương đồng thời cải tạo cái cũ và xây dựng cái mới, phát triển lực lượng sản xuất, văn hóa và con người.",
+    category: "Tư tưởng HCM",
+    difficulty: "medium",
+  },
+  {
+    id: "16",
+    question: "Một nguyên tắc xây dựng CNXH trong thời kỳ quá độ là",
+    options: [
+      "đặt đối ngoại lên trên đối nội, điều chỉnh theo lợi ích tức thời.",
+      "tăng trưởng tối đa, công bằng và phúc lợi tính sau giai đoạn.",
+      "thu hẹp vai trò quần chúng, tập trung hóa quyết định dài hạn.",
+      "kết hợp sức mạnh dân tộc với sức mạnh thời đại, phát huy dân chủ.",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "Nguyên tắc cơ bản là kết hợp sức mạnh dân tộc với sức mạnh thời đại và phát huy dân chủ trong xây dựng CNXH.",
+    category: "Tư tưởng HCM",
+    difficulty: "medium",
+  },
+  {
+    id: "17",
     question: "Vị trí của độc lập dân tộc đối với CNXH theo HCM là",
     options: [
       "mục tiêu riêng rẽ, triển khai song song không ràng buộc.",
@@ -236,7 +266,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "16",
+    id: "18",
     question: "CNXH bảo đảm vững chắc nền độc lập dân tộc vì",
     options: [
       "tập trung quyền lực cao, giảm xung đột lợi ích đa dạng.",
@@ -251,7 +281,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "17",
+    id: "19",
     question: 'Điều kiện bảo đảm "độc lập gắn liền với CNXH" gồm',
     options: [
       "tăng trưởng nhanh, chấp nhận phân hóa, hiệu quả là thước đo duy nhất.",
@@ -266,7 +296,22 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "18",
+    id: "20",
+    question: "Cách hiểu đúng về quan hệ ĐLDT–CNXH theo HCM là",
+    options: [
+      "hai mục tiêu độc lập: có mục tiêu nào trước cũng tương đương.",
+      "độc lập đủ hình thức, CNXH sẽ tự đến theo chu kỳ phát triển.",
+      "CNXH thay thế độc lập, tách khỏi yêu cầu thống nhất lãnh thổ.",
+      "thống nhất hữu cơ: có độc lập thực chất để tiến lên CNXH; CNXH củng cố độc lập bền vững.",
+    ],
+    correctAnswer: 3,
+    explanation:
+      "Theo HCM, quan hệ độc lập dân tộc và CNXH là thống nhất hữu cơ: có độc lập thực chất để tiến lên CNXH, và CNXH củng cố độc lập bền vững.",
+    category: "Tư tưởng HCM",
+    difficulty: "hard",
+  },
+  {
+    id: "21",
     question:
       "Bối cảnh quốc tế – trong nước nào đã tạo tiền đề trực tiếp cho tư tưởng HCM về vấn đề dân tộc và cách mạng giải phóng dân tộc?",
     options: [
@@ -282,7 +327,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "19",
+    id: "22",
     question:
       'Nhóm "cơ sở hình thành" tư tưởng HCM về độc lập dân tộc được nhận diện đầy đủ nhất ở phương án nào dưới đây?',
     options: [
@@ -298,7 +343,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "20",
+    id: "23",
     question:
       "Mốc đánh dấu bước chuyển từ chủ nghĩa yêu nước đến lập trường Mác–Lênin trong tư tưởng HCM là:",
     options: [
@@ -314,7 +359,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "21",
+    id: "24",
     question:
       "Luận điểm vì sao cách mạng giải phóng dân tộc ở Việt Nam phải do Đảng Cộng sản lãnh đạo được thể hiện đúng nhất ở lựa chọn nào?",
     options: [
@@ -330,7 +375,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "22",
+    id: "25",
     question:
       "Trật tự các mốc chính phản ánh quá trình hình thành và phát triển tư tưởng HCM về cách mạng giải phóng dân tộc là:",
     options: [
@@ -346,7 +391,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "23",
+    id: "26",
     question:
       'Vận dụng "độc lập dân tộc gắn CNXH" hiện nay, chủ trương nhất quán là:',
     options: [
@@ -362,7 +407,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "24",
+    id: "27",
     question: "Để củng cố đại đoàn kết dân tộc, phương châm cốt lõi là:",
     options: [
       "Nhất thể hóa tập quán để dễ quản lý.",
@@ -377,7 +422,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "easy",
   },
   {
-    id: "25",
+    id: "28",
     question: '"Tự lực tự cường, đồng thời tranh thủ ngoại lực" được hiểu là:',
     options: [
       "Làm chủ công nghệ lõi và thu hút FDI kèm chuyển giao.",
@@ -392,7 +437,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "26",
+    id: "29",
     question: 'Nguyên tắc "thêm bạn bớt thù" thể hiện qua:',
     options: [
       "Thu hẹp quan hệ đa phương để linh hoạt đối ngoại.",
@@ -407,7 +452,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "27",
+    id: "30",
     question: "Phát huy sức mạnh dân tộc trong chuyển đổi số cần:",
     options: [
       "Giảm chi giáo dục, ưu tiên hạ tầng phần cứng.",
@@ -422,7 +467,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "28",
+    id: "31",
     question:
       "Vai trò của Mặt trận Tổ quốc và các tổ chức chính trị–xã hội là:",
     options: [
@@ -438,7 +483,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "29",
+    id: "32",
     question: "Phát triển vùng DTTS và miền núi theo tinh thần HCM cần:",
     options: [
       "Khai thác tài nguyên tối đa để tăng thu.",
@@ -453,7 +498,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "30",
+    id: "33",
     question: '"Độc lập gắn hạnh phúc nhân dân" trong chính sách hiện nay là:',
     options: [
       "Chỉ tiêu GDP là thước đo chính.",
@@ -468,7 +513,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "31",
+    id: "34",
     question: "Kết hợp sức mạnh dân tộc – thời đại trong kinh tế xanh gồm:",
     options: [
       "Liên minh chuyển dịch năng lượng và nâng nội lực công nghệ xanh.",
@@ -483,7 +528,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "32",
+    id: "35",
     question: "Bảo tồn văn hóa DTTS theo tinh thần HCM cần:",
     options: [
       "Tôn trọng đa dạng, chống kỳ thị; gắn bảo tồn với sinh kế công bằng.",
@@ -498,7 +543,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "33",
+    id: "36",
     question: "Đối ngoại nhân dân vận dụng tư tưởng HCM bằng:",
     options: [
       "Thu hẹp kênh phi nhà nước để giảm rủi ro.",
@@ -513,7 +558,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "34",
+    id: "37",
     question: '"Dựa vào dân, vì dân" trong QP–AN nhấn mạnh:',
     options: [
       "Xây dựng thế trận lòng dân; QPTD–ANND gắn phát triển vùng trọng yếu.",
@@ -528,7 +573,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "35",
+    id: "38",
     question: "Chống chia rẽ dân tộc trên không gian mạng cần:",
     options: [
       "Truyền thông đúng; đối thoại; giáo dục lịch sử–pháp luật–văn hóa; nâng kỹ năng số.",
@@ -543,7 +588,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "36",
+    id: "39",
     question: "Phát triển DN/HTX vùng DTTS theo nguyên tắc:",
     options: [
       "Bao cấp toàn bộ để hạn chế rủi ro.",
@@ -558,7 +603,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "37",
+    id: "40",
     question: "Gắn độc lập với toàn vẹn lãnh thổ trong thời bình đòi hỏi:",
     options: [
       "Kiên định luật pháp quốc tế; giải quyết tranh chấp hòa bình.",
@@ -573,7 +618,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "38",
+    id: "41",
     question: '"Không có độc lập thật sự nếu nhân dân không hạnh phúc" hàm ý:',
     options: [
       "Ưu tiên an sinh; giảm nghèo đa chiều; nâng dịch vụ cơ bản.",
@@ -588,7 +633,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "easy",
   },
   {
-    id: "39",
+    id: "42",
     question: 'Tăng cường "đoàn kết tôn giáo – dân tộc" cần:',
     options: [
       "Kỳ thị tôn giáo để giữ trật tự.",
@@ -603,7 +648,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "40",
+    id: "43",
     question: "Truyền thông đối ngoại về vấn đề dân tộc nên:",
     options: [
       "Tự tôn cực đoan để khẳng định bản sắc.",
@@ -618,7 +663,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "41",
+    id: "44",
     question: '"Liên minh công–nông–trí" thời kỳ mới gồm:',
     options: [
       "Dồn lực đô thị lớn, nông thôn lan tỏa sau.",
@@ -633,7 +678,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "hard",
   },
   {
-    id: "42",
+    id: "45",
     question: "Phòng, chống dân tộc hẹp hòi/kỳ thị hiệu quả là:",
     options: [
       "Đối đầu cứng trên mọi nền tảng.",
@@ -648,7 +693,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "43",
+    id: "46",
     question: '"Kết hợp sức mạnh thời đại" trong khoa học–công nghệ là:',
     options: [
       "Hợp tác quốc tế về AI/vi mạch kèm nội lực R&D; bảo hộ SHTT.",
@@ -663,7 +708,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "44",
+    id: "47",
     question: "Chính sách ngôn ngữ – giáo dục với DTTS cần:",
     options: [
       "Chỉ dạy tiếng phổ thông để thống nhất.",
@@ -678,7 +723,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "45",
+    id: "48",
     question: "Phát triển du lịch cộng đồng DTTS đúng hướng là:",
     options: [
       "Tập trung đại dự án, di dời dân bản địa.",
@@ -693,7 +738,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "46",
+    id: "49",
     question: "Thông tin – truyền thông vùng DTTS cần:",
     options: [
       "Giảm báo chí cơ sở để tiết kiệm chi phí công.",
@@ -708,7 +753,7 @@ export const quizQuestions: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    id: "47",
+    id: "50",
     question: 'Cải cách thể chế theo "độc lập gắn CNXH" là:',
     options: [
       "Nới lỏng pháp luật để đẩy nhanh quyết định ngắn hạn.",
@@ -721,131 +766,6 @@ export const quizQuestions: QuizQuestion[] = [
       "Cải cách thể chế theo định hướng độc lập gắn CNXH là xây dựng nhà nước pháp quyền XHCN của dân-do dân-vì dân với nguyên tắc thượng tôn pháp luật.",
     category: "Vận dụng",
     difficulty: "medium",
-  },
-  {
-    id: "48",
-    question:
-      'Trong lộ trình hội nhập theo tinh thần "thêm bạn bớt thù", EVFTA có hiệu lực với Việt Nam từ khi nào?',
-    options: ["01/01/2019", "01/08/2020", "01/01/2021", "15/12/2024"],
-    correctAnswer: 1,
-    explanation:
-      "EVFTA (Hiệp định Thương mại tự do EU-Việt Nam) có hiệu lực đối với Việt Nam từ ngày 01/08/2020.",
-    category: "Vận dụng",
-    difficulty: "hard",
-  },
-  {
-    id: "49",
-    question:
-      'Để "kết hợp sức mạnh thời đại", Việt Nam tham gia CPTPP; hiệu lực đối với Việt Nam là:',
-    options: ["30/12/2018", "01/01/2022", "14/01/2019", "01/05/2021"],
-    correctAnswer: 2,
-    explanation:
-      "CPTPP (Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương) có hiệu lực đối với Việt Nam từ ngày 14/01/2019.",
-    category: "Vận dụng",
-    difficulty: "hard",
-  },
-  {
-    id: "50",
-    question:
-      "Theo đường lối đa phương hóa, RCEP có hiệu lực với Việt Nam vào:",
-    options: ["01/01/2022", "01/06/2023", "15/11/2020 (ngày ký)", "02/01/2023"],
-    correctAnswer: 0,
-    explanation:
-      "RCEP (Hiệp định Đối tác Kinh tế Toàn diện Khu vực) có hiệu lực đối với Việt Nam từ ngày 01/01/2022.",
-    category: "Vận dụng",
-    difficulty: "hard",
-  },
-  {
-    id: "51",
-    question:
-      '"Chủ động, tích cực hội nhập" thể hiện ở việc Việt Nam gia nhập WTO ngày:',
-    options: ["01/01/2006", "30/04/1999", "11/01/2007", "28/07/1995"],
-    correctAnswer: 2,
-    explanation:
-      "Việt Nam chính thức gia nhập Tổ chức Thương mại Thế giới (WTO) vào ngày 11/01/2007.",
-    category: "Vận dụng",
-    difficulty: "medium",
-  },
-  {
-    id: "52",
-    question:
-      "Thực hiện cam kết vì con người và phát triển bền vững, tại COP26 Việt Nam tuyên bố mục tiêu:",
-    options: [
-      "Trung hòa phát thải ròng (net-zero) vào năm 2050",
-      "100% điện tái tạo vào 2050",
-      "Giảm 43% phát thải vào 2030",
-      "Đặt trần điện than đến 2040",
-    ],
-    correctAnswer: 0,
-    explanation:
-      "Tại COP26, Việt Nam cam kết đạt mục tiêu trung hòa phát thải ròng (net-zero) vào năm 2050.",
-    category: "Vận dụng",
-    difficulty: "medium",
-  },
-  {
-    id: "53",
-    question:
-      "Để hiện thực hóa chuyển dịch năng lượng công bằng, JETP với Nhóm Đối tác quốc tế công bố tổng huy động ban đầu:",
-    options: ["8,5 tỷ USD", "10,0 tỷ USD", "15,5 tỷ USD", "20,0 tỷ USD"],
-    correctAnswer: 2,
-    explanation:
-      "Đối tác Chuyển dịch Năng lượng Công bằng (JETP) với Việt Nam công bố tổng huy động ban đầu 15,5 tỷ USD.",
-    category: "Vận dụng",
-    difficulty: "hard",
-  },
-  {
-    id: "54",
-    question:
-      'Vận dụng "thêm bạn bớt thù", Việt–Mỹ nâng cấp quan hệ lên Đối tác chiến lược toàn diện (CSP) vào:',
-    options: [
-      "08/2022 (Washington D.C.)",
-      "11/2023 (Tokyo)",
-      "09/2023 (Hà Nội)",
-      "03/2024 (Sydney)",
-    ],
-    correctAnswer: 2,
-    explanation:
-      "Quan hệ Việt Nam-Hoa Kỳ được nâng cấp lên Đối tác chiến lược toàn diện vào tháng 09/2023 tại Hà Nội.",
-    category: "Vận dụng",
-    difficulty: "medium",
-  },
-  {
-    id: "55",
-    question:
-      'Theo tinh thần "kết hợp sức mạnh thời đại", Việt–Australia nâng cấp lên CSP vào:',
-    options: ["11/2023", "07/03/2024", "01/2025", "07/2025"],
-    correctAnswer: 1,
-    explanation:
-      "Quan hệ Việt Nam-Australia được nâng cấp lên Đối tác chiến lược toàn diện vào ngày 07/03/2024.",
-    category: "Vận dụng",
-    difficulty: "medium",
-  },
-  {
-    id: "56",
-    question:
-      "Củng cố đối tác chiến lược ở Đông Bắc Á, Việt–Nhật nâng cấp lên CSP vào:",
-    options: ["10/2022", "03/2024", "27/11/2023", "04/2025"],
-    correctAnswer: 2,
-    explanation:
-      "Quan hệ Việt Nam-Nhật Bản được nâng cấp lên Đối tác chiến lược toàn diện vào ngày 27/11/2023.",
-    category: "Vận dụng",
-    difficulty: "medium",
-  },
-  {
-    id: "57",
-    question:
-      'Thực thi chuyển dịch năng lượng theo hướng "độc lập gắn CNXH": Điều chỉnh Quy hoạch điện VIII (Revised PDP8) được phê duyệt theo:',
-    options: [
-      "Quyết định 500/QĐ-TTg (2023)",
-      "Quyết định 942/QĐ-TTg (2021)",
-      "Quyết định 768/QĐ-TTg (15/04/2025)",
-      "Quyết định 1658/QĐ-TTg (2021)",
-    ],
-    correctAnswer: 2,
-    explanation:
-      "Quy hoạch điện VIII điều chỉnh (Revised PDP8) được phê duyệt theo Quyết định 768/QĐ-TTg ngày 15/04/2025.",
-    category: "Vận dụng",
-    difficulty: "hard",
   },
 ];
 
