@@ -81,7 +81,9 @@ export default function AIUse() {
                                 ChatGPT
                             </h5>
                             <ul className="space-y-2 text-gray-300 text-sm">
-                                <li>• Hỗ trợ đọc hiểu và tóm tắt giáo trình</li>
+                                <li>• Hỗ trợ đọc hiểu và tóm tắt giáo trình <strong>Giáo trình Tư tưởng Hồ Chí Minh,
+                                    dùng cho sinh viên bậc đại học hệ không chuyên ngành lý luận chính trị </strong>
+                                </li>
                                 <li>• Phân tích nội dung chương, trích lọc các ý chính</li>
                                 <li>• Hỗ trợ lên nội dung vào dựng kịch bản</li>
                             </ul>
@@ -154,7 +156,9 @@ export default function AIUse() {
                                 NotebookLM Prompts
                             </h5>
                             <ul className="space-y-3 text-gray-300 text-sm">
-                                <li>• "Toàn bộ giáo trình, CLO và ghi chú môn học đã được lưu trong Google Notes. Khi
+                                <li>• "Toàn bộ giáo trình <strong>Giáo trình Tư tưởng Hồ Chí Minh, dùng cho sinh viên
+                                    bậc đại học hệ không chuyên ngành lý luận chính trị - Bản dự thảo</strong>, CLO và
+                                    ghi chú môn học đã được lưu trong Google Notes. Khi
                                     phân tích, chỉ sử dụng thông tin từ kho dữ liệu đã lưu đó, không bổ sung kiến thức
                                     bên ngoài."
                                 </li>
@@ -177,7 +181,8 @@ export default function AIUse() {
                                     điệu
                                 </li>
                                 <li>• Tùy chỉnh: Thêm ngắt nghỉ, điều chỉnh cường độ (nếu cần)</li>
-                                <li>• Chuyển đổi: Nhấn nút "Tạo giọng đọc" để hệ thống sinh file audio</li>
+                                <li>• Chuyển đổi: Nhấn nút <strong>Tạo giọng đọc</strong> để hệ thống sinh file audio
+                                </li>
                                 <li>• Tải xuống: Lưu file audio và dùng cho bước dựng video</li>
                             </ul>
                         </div>

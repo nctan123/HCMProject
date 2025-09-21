@@ -9,7 +9,7 @@ export default function SectionNav({activeSection, setActiveSection}: Props) {
         <nav className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur-sm border-b border-orange-500/20">
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-center space-x-8 overflow-x-auto">
-                    {['Bối cảnh lịch sử', 'Cơ sở hình thành', 'Quá trình phát triển', 'Sự vận dụng', 'Video', 'AI Use', 'Quiz'].map((item, index) => (
+                    {['Bối cảnh lịch sử', 'Cơ sở hình thành', 'Quá trình phát triển', 'Tư tưởng HCM', 'Sự vận dụng', 'Video', 'AI Use', 'Quiz'].map((item, index) => (
                         <button
                             key={index}
                             onClick={() => setActiveSection(index)}

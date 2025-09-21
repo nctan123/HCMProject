@@ -231,35 +231,6 @@ export default function DevelopmentTimeline() {
             })}
           </div>
         </div>
-        <div className="mt-8 bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl p-6 border border-slate-700/50">
-          <h5 className="font-semibold text-white mb-4 text-center text-lg">Tổng kết quá trình phát triển</h5>
-          <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-300">
-            <div>
-              <h6 className="font-semibold text-orange-300 mb-3">Các mốc quan trọng</h6>
-              <ul className="space-y-2 text-gray-400">
-                <li>• <strong>5-6-1911:</strong> Ra đi tìm đường cứu nước</li>
-                <li>• <strong>18-6-1919:</strong> Gửi bản yêu sách 8 điểm tại Hội nghị Vécxây</li>
-                <li>• <strong>1920:</strong> Đọc Luận cương Lênin - bước ngoặt quyết định</li>
-                <li>• <strong>21-6-1925:</strong> Xuất bản Báo Thanh Niên - tờ báo cách mạng đầu tiên</li>
-                <li>• <strong>3-2-1930:</strong> Thành lập Đảng Cộng sản Việt Nam</li>
-                <li>• <strong>5-1941:</strong> Hội nghị Trung ương VIII - khẳng định giải phóng dân tộc</li>
-                <li>• <strong>1945:</strong> Cách mạng Tháng Tám thành công</li>
-                <li>• <strong>1969:</strong> Hệ thống tư tưởng hoàn chỉnh</li>
-              </ul>
-            </div>
-            <div>
-              <h6 className="font-semibold text-orange-300 mb-3">Ý nghĩa lịch sử</h6>
-              <p className="text-gray-400 leading-relaxed mb-3">
-                Quá trình phát triển tư tưởng Hồ Chí Minh phản ánh sự vận động từ tìm tòi, khám phá đến xác định con đường cách mạng, từ xây dựng lý luận đến chỉ đạo thực tiễn.
-              </p>
-              <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/30">
-                <p className="text-orange-300 font-medium text-center text-sm">
-                  <strong>"Ngọn đèn soi đường cho cách mạng Việt Nam"</strong>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Image Zoom Modal */}

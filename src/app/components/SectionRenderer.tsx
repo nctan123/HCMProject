@@ -4,6 +4,7 @@ import DevelopmentTimeline from './sections/DevelopmentTimeline';
 import PartyApplication from './sections/PartyApplication';
 import Video from './sections/Video';
 import AIUse from './sections/AIUse';
+import HCM from './sections/HCM';
 import QuizComponent from './QuizComponent';
 
 type Props = {
@@ -19,12 +20,14 @@ export default function SectionRenderer({activeSection}: Props) {
         case 2:
             return <DevelopmentTimeline/>;
         case 3:
-            return <PartyApplication/>;
+            return <HCM/>;
         case 4:
-            return <Video/>;
+            return <PartyApplication/>;
         case 5:
-            return <AIUse/>;
+            return <Video/>;
         case 6:
+            return <AIUse/>;
+        case 7:
             return <QuizComponent/>;
         default:
             return <HistoricalContext/>;
