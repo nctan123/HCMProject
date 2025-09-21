@@ -9,14 +9,20 @@ export default function Video() {
             <Play className="h-8 w-8 text-white" />
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-white mb-2">Video Thuyết Trình</h3>
-            <p className="text-gray-400">Nội dung video minh họa</p>
+            <h3 className="text-3xl font-bold text-white mb-2">Sợi Chỉ Đỏ</h3>
           </div>
         </div>
-        <div className="text-center text-gray-300">
-          <p>Video content will be added here</p>
+        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded-2xl"
+            src="https://www.youtube.com/embed/dAGBF1Hocx0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
-    </section>
+    </section>    
   );
 }
