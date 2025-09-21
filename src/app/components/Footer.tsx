@@ -17,7 +17,7 @@ export default function Footer() {
                         </div>
 
                         <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
-                            <span>© 2024 By Group 11 ❤️</span>
+                            <span>© 2025 By Group 1❤️</span>
                         </div>
 
                         <div className="flex items-center justify-center space-x-6">
